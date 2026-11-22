@@ -11,8 +11,8 @@ RUN touch src/main.rs && cargo build --release
 
 FROM debian:bookworm-slim
 RUN useradd --create-home appuser
-COPY --from=builder /usr/src/app/target/release/docker-practica /usr/local/bin/docker-practica
+COPY --from=builder /usr/src/app/target/release/docker-poc /usr/local/bin/docker-poc
 
 USER appuser
 EXPOSE 5000
-CMD ["docker-practica"]
+CMD ["docker-poc"]
